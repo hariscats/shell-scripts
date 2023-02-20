@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Given confusion between CPUs and vCPUs, this script provides a count of physical CPUs, logical CPUs and number of cores per physical CPU
 
