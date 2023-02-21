@@ -70,3 +70,6 @@ az aks get-credentials -n $aksName -g $rgName
  
  # Verify cluster is running
 az aks show  -n $aksName -g $rgName
+
+# Stop an aks cluster
+az aks stop -n $aksName -g $rgName
