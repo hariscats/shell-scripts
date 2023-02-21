@@ -13,14 +13,14 @@ az account set -s 'REPLACE_WITH_SUBSCRIPTION_NAME'
 # Set values for variables
 rgName='aks-demos' #'aks-solution'
 aksName='hcats-cluster'
-location='East US'
+location='EastUS'
 
 # Create a resource group
 az group create -l $location -n $rgName #--subscription $appSubId
  
 # Azure Container Registry
 # set this to the name of your Azure Container Registry.  It must be globally unique
-acrName=hcatsMcaps #name is global
+acrName=hcatsben #name is global
 # Note: acr in enterprise rg in Enterprise subscription
 az acr create --name $acrName --resource-group $rgName -l $location --sku Basic
 acrResourceId=$(az acr show --name $acrName --resource-group $rgName --query "id" --output tsv)
@@ -45,7 +45,7 @@ az aks get-versions --location $location --output table
 
 # Provision cluster
 az aks create --resource-group $rgName --name $aksName \
-    --kubernetes-version 1.19.1 \
+    --kubernetes-version 1.25.5 \
     --location $location \
     --node-vm-size Standard_D2_v3 \
     --vm-set-type VirtualMachineScaleSets \
