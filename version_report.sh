@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# Basic script to get name and version of SW
+
 HostIpAddress=$(hostname -i)
 NginxVersion=$(nginx -v 2>&1 | cut -d " " -f 3 | cut -d "/" -f 2)
 DockerVersion=$(docker -v | cut -d " " -f3 | tr "," " ")
