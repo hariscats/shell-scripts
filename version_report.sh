@@ -12,3 +12,13 @@ Docker Version: $DockerVersion
 Nginx Version: $NginxVersion
 OS Name: $OSUname
 EOF
+
+##### Python3 pip3 packages Version #####
+echo "# python3 packages version"
+{
+    pip3 list
+    echo "# python3 packages version" >> versions-$date.md
+    pip3 list >> versions-$date.md
+} || {
+    echo "No python3"
+}
