@@ -5,7 +5,7 @@
 E_USEREXISTS=70
 E_NOTROOT=130
 
-if [ "$UID" -ne 0 ]
+if [ $(id -u) -ne 0 ]
 then
   echo "The user must be root to run this script."
   exit $E_NOTROOT
@@ -27,7 +27,7 @@ pass=$2
 	if [ $? -eq 0 ] 
 	then	
 	  echo "User $username already exists."
-    echo "Please chose another username."
+    	  echo "Please chose another username."
 	  exit $E_USEREXISTS
 	fi  
 
@@ -37,7 +37,7 @@ pass=$2
 	echo "The Linux User account is setup"
 
 else
-        echo  "This script requires 2 arguments, you have given $#"
+	echo  "This script requires 2 arguments, you have given $#"
         echo  "You have to call the script $0 username and the pass"
 fi
 
