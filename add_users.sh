@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# Shell script for creating a user if already does not exist.
+
 E_USEREXISTS=70
 E_NOTROOT=130
 
@@ -15,7 +17,7 @@ then
   echo "Please pass in username and password"
 fi
 
-#test, if both argument are there
+# Verify if both argument were passed
 if [ $# -eq 2 ]; then
 username=$1
 pass=$2
