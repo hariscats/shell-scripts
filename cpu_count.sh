@@ -8,3 +8,5 @@ test -f $CPUFILE || exit 1
 echo "Physical CPUs: $(grep "physical id" $CPUFILE | sort -u | wc -l)"
 echo "Logical Cores: $(grep "core id" $CPUFILE | sort -u | wc -l)"
 echo "CPU count:     $(grep "processor" $CPUFILE | wc -l)"
+
+exit 0
