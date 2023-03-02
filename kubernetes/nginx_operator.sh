@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 # Operator that creates a Deployment when there's a new ConfigMap
+# This is a work in progress
 
 kubectl get --watch --output-watch-events configmap \
 -o=custom-columns=type:type,name:object.metadata.name \
