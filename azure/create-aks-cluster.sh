@@ -14,6 +14,7 @@ az account set -s 'REPLACE_WITH_SUBSCRIPTION_NAME'
 rgName='aks-demos' #'aks-solution'
 aksName='hcats-cluster'
 location='EastUS'
+vmSku='Standard_D2_v3'
 
 # Create a resource group
 az group create -l $location -n $rgName #--subscription $appSubId
@@ -47,7 +48,7 @@ az aks get-versions --location $location --output table
 az aks create --resource-group $rgName --name $aksName \
     --kubernetes-version 1.25.5 \
     --location $location \
-    --node-vm-size Standard_D2_v3 \
+    --node-vm-size $vmSku \
     --vm-set-type VirtualMachineScaleSets \
     --node-osdisk-size 30 \
     --node-count 1 --max-pods 30 \
