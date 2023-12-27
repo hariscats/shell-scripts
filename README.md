@@ -1,3 +1,3 @@
 # shell-scripts
 
-Basic bash scripts for common tasks and maintaining skills.
+Shell scripts for common DevOps tasks and maintaining skills.
